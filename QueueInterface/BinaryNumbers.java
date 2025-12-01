@@ -1,0 +1,26 @@
+/*Generate the first N binary numbers (as strings) using a queue.
+Example:
+N=5 → Output: ["1", "10", "11", "100", "101"].
+ */
+
+package QueueInterface;
+import java.util.*;
+public class BinaryNumbers {
+    public static void main(String[] args) {
+
+        int N = 5;
+        Queue<String> q = new LinkedList<>();
+
+        q.add("1");
+
+        for (int i = 0; i < N; i++) {
+            String s = q.remove();
+            System.out.print(s + " ");
+            q.add(s + "0");
+            q.add(s + "1");
+        }
+    }
+}
+
+    
+
